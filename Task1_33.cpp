@@ -89,9 +89,10 @@ vector<vector<bool>> generateTruthValues(int numVars) {
 }
 
 // Function to check if the expression has balanced parentheses
-bool isValidExpression(const string& expr) {
-    stack<char> s;
-    for (char ch : expr) {
+bool isValidExpression(const std::string& expr) {
+    std::stack<char> s;
+    for (size_t i = 0; i < expr.length(); ++i) {
+        char ch = expr[i];
         if (ch == '(') {
             s.push(ch);
         } else if (ch == ')') {
@@ -99,7 +100,12 @@ bool isValidExpression(const string& expr) {
                 return false;
             }
             s.pop();
-        } else if (ch == '&' || ch == '|' || isalpha(ch) || isspace(ch)) {
+        } else if (ch == '!') {
+            // Ensure '!' is followed by a valid variable or '('
+            if (i == expr.length() - 1 || !(std::isalpha(expr[i + 1]) || expr[i + 1] == '(')) {
+                return false;
+            }
+        } else if (ch == '&' || ch == '|' || std::isalpha(ch) || std::isspace(ch)) {
             // Allow valid operators, alphabets (variables), and spaces
             continue;
         } else {
@@ -110,16 +116,21 @@ bool isValidExpression(const string& expr) {
     return s.empty();
 }
 
-// Function to ensure all operators are enclosed by brackets
-bool checkOperatorsEnclosed(const string& expr) {
-    for (int i = 0; i < expr.length(); ++i) {
+// Function to ensure all operators are enclosed by valid expressions
+bool checkOperatorsEnclosed(const std::string& expr) {
+    for (size_t i = 0; i < expr.length(); ++i) {
         if (expr[i] == '&' || expr[i] == '|') {
             // Ensure there is a valid character or ')' before the operator
-            if (i == 0 || !(isalpha(expr[i - 1]) || expr[i - 1] == ')')) {
+            if (i == 0 || !(std::isalpha(expr[i - 1]) || expr[i - 1] == ')')) {
                 return false;
             }
             // Ensure there is a valid character or '(' after the operator
-            if (i == expr.length() - 1 || !(isalpha(expr[i + 1]) || expr[i + 1] == '(')) {
+            if (i == expr.length() - 1 || !(std::isalpha(expr[i + 1]) || expr[i + 1] == '(' || expr[i + 1] == '!')) {
+                return false;
+            }
+        } else if (expr[i] == '!') {
+            // Ensure '!' is followed by a valid variable or '('
+            if (i == expr.length() - 1 || !(std::isalpha(expr[i + 1]) || expr[i + 1] == '(')) {
                 return false;
             }
         }
