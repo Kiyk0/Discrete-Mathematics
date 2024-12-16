@@ -150,7 +150,16 @@ int main() {
         cout << "The correct form of expression should be enclosed by brackets -> (A&B)" << endl;
         cout << "Enter the number of variables: ";
         cin >> numVars;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        // Check for invalid input or negative/zero variables
+        if (cin.fail() || numVars <= 0) {
+            cin.clear(); // Clear the error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore invalid input
+            cout << "Invalid number of variables. Exiting..." << endl;
+            break;
+        }
+
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear the input buffer
 
         cout << "Enter the original expression: ";
         getline(cin, originalExpression);
