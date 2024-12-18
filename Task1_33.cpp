@@ -140,15 +140,14 @@ int main() {
     cout << "The correct form of expression should be enclosed by brackets -> (A&B)" << endl;
     cout << "Enter the number of variables: ";
 
-    // Input validation for numVars
     while (true) {
         cin >> numVars;
         if (cin.fail() || numVars <= 0) {
-            cin.clear(); // Clear error flags
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard invalid input
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid number of variables. Please enter a positive integer: ";
         } else {
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Consume leftover newline
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             break;
         }
     }
@@ -186,7 +185,6 @@ int main() {
         }
     }
 
-    // Print truth table
     printTruthTable(truthValues, premises, conclusion);
 
     cout << "The set of formulas is " << (isSatisfiable ? "Satisfiable" : "Not satisfiable") << endl;
