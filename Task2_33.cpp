@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 #include <cmath>
 #include <stack>
@@ -224,7 +224,10 @@ int main()
 {
     string originalExpression, simplifiedExpression;
     int numVars;
-    cout << "The correct form of expression should be enclosed by brackets -> (A&B)" << endl;
+    cout << "Welcome, read the following steps to learn how to use the program" << endl;
+    cout << "The correct form of expression should be enclosed by brackets -> (!(A|B)|!C) and (B|C) and (!A|!C)" << endl;
+    cout << "You use can only use this version of AND -> '&', OR -> '|' and NOT -> '!'" << endl;
+    cout << "Use uppercase alphabet in sequential order starting from A B C ... Z" << endl;
     cout << "Enter the number of variables: ";
     cin >> numVars;
 
