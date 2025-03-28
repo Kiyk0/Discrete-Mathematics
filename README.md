@@ -21,9 +21,6 @@ This project is a comprehensive exploration of logical reasoning, digital circui
 - **Algorithmic Implementation:**  
   Each task was implemented in C++ using basic math operations, emphasizing code clarity, functionality, correctness, and originality.
 
-- **Analytical Documentation:**  
-  Supplementary analytical work (handwritten or typed) was provided to explain the logic behind the implementations and the steps taken to ensure accuracy.
-
 - **Structured Codebase:**  
   The repository follows a clear structure, with each task having its dedicated C++ file (e.g., `Task1_33.cpp`, `Task2_33.cpp`, etc.) to facilitate individual evaluation and testing.
 
