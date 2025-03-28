@@ -1,4 +1,4 @@
-# PHM211s Project Tasks - Fall 2024
+# Discrete Mathematics Project Tasks
 
 This project is a comprehensive exploration of logical reasoning, digital circuit design, and cryptographic techniques using C++. It consists of four main tasks, each addressing a different aspect of computational logic and problem solving.
 
