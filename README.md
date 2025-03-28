@@ -25,7 +25,7 @@ This project is a comprehensive exploration of logical reasoning, digital circui
   Supplementary analytical work (handwritten or typed) was provided to explain the logic behind the implementations and the steps taken to ensure accuracy.
 
 - **Structured Codebase:**  
-  The repository follows a clear structure, with each task having its dedicated C++ file (e.g., `Task1_GroupNumber.cpp`, `Task2_GroupNumber.cpp`, etc.) to facilitate individual evaluation and testing.
+  The repository follows a clear structure, with each task having its dedicated C++ file (e.g., `Task1_33.cpp`, `Task2_33.cpp`, etc.) to facilitate individual evaluation and testing.
 
 - **Learning Outcomes:**  
   The project demonstrates proficiency in logical analysis, digital circuit simplification, and the application of classical cryptography, providing a strong foundation for further exploration in these fields.
@@ -35,7 +35,7 @@ This project is a comprehensive exploration of logical reasoning, digital circui
 1. **Compile:**  
    Use a C++ compiler to compile each task. For example:  
    ```bash
-   g++ Task1_GroupNumber.cpp -o task1
+   g++ Task1_33.cpp -o task1
 
 2. **Execute:**  
    Run the compiled executable. For example:
